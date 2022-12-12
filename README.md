@@ -10,9 +10,11 @@ ng serve
 
 ## Implementation
 All the 5 requirements have been satisfied/implemented. 
+
 1.Issue Fix - Done.
 Having look at the issue for France, Norway and other countries not displaying the data, it appears to be data issue rather then a coding error.
 Again, there is a difference between France & Norway data.
+
 For France,  
 	    Issue : ISO_A2 has value -99 for which no corresponding exists in [data.json]
 	    Fix   : I have changed the value of properties ISO_A2='FR' in [ne_110m_admin_0_countries.json] for France, which has corresponding data in [data.json]	
@@ -35,10 +37,16 @@ Other countries :
 
 
 What could be improved?
+
 1.Move the [globe] as more generic component, which could accept different dataset as input.So that, if needed it could be 
-  be used at more than one place without duplicating the code. Also, this will move all globe related functionalities in separate class/component instead of app.component.
+  be used at more than one place without duplicating the code. Also, this will move all globe related functionalities in    
+  separate class/component instead of   app.component.
+  
 2.Added validation and appropriate message to display the globe . On some countries, when data is not found it was throwing error.(visible in browser console)
+
 3.On hover display message near the respective country rather than at the right hand corner.
+
 4.Moved the global function getScoreColour() to helper service. 
+
 5.Believe there is not need of Ramda library just to check is null, unless if it is needed for something else more obvious.
 
